@@ -21,7 +21,7 @@ function App() {
           }
         />
         <Route
-          path="/home"
+          path="/"
           element={
             <Suspense
               fallback={<div className="full-page-loading">Loading...</div>}
