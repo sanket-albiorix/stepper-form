@@ -1,11 +1,14 @@
-import Table from "../common/Table"
+import Table from "../common/Table";
 
 const EmployeeList = () => {
+  let empData = localStorage.getItem("emp") || "[]";
+  empData = JSON.parse(empData);
+  
   return (
     <div className="mt-3">
-      <Table/>
+      <Table data={empData} />
     </div>
-  )
-}
+  );
+};
 
-export default EmployeeList
+export default EmployeeList;

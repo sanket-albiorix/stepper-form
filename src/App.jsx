@@ -7,6 +7,8 @@ const Home = lazy(() => import("./pages/Home"));
 const AddEmployee = lazy(() => import("./pages/AddEmployee"));
 
 function App() {
+  // reset data
+  localStorage.removeItem("emp");
   return (
     <Router>
       <Routes>
@@ -14,6 +16,7 @@ function App() {
           path="/add-employee"
           element={
             <Suspense
+              key="emp"
               fallback={<div className="full-page-loading">Loading...</div>}
             >
               <AddEmployee />
@@ -24,6 +27,7 @@ function App() {
           path="/"
           element={
             <Suspense
+              key="home"
               fallback={<div className="full-page-loading">Loading...</div>}
             >
               <Home />
